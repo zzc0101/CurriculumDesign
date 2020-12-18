@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zzc.curriumdesign.dao.DeviceDao">
+    <insert id="insertDevice" parameterType="com.zzc.curriumdesign.vo.Device">
+        insert into t_login(IpAddress, b_id, LoginMethod, d_id, Time, userName)
+        values (#{IpAddress},(SELECT t_browser.b_id from t_browser where browser=#{Browser}),#{LoginMethod},
+                (SELECT t_device.d_id from t_device where device=#{Device}),#{Time},#{userName});
+    </insert>
+    
+    <select id="getDevice" resultType="com.zzc.curriumdesign.vo.Device">
+        SELECT id, IpAddress, tb.b_id, LoginMethod, td.d_id, Time, userName, tb.browser,td.device FROM t_login
+        JOIN t_browser tb on tb.b_id = t_login.b_id
+            JOIN t_device td on td.d_id = t_login.d_id WHERE userName=#{userName}
+        ORDER BY Time desc limit 10
+    </select>
+    
+</mapper>

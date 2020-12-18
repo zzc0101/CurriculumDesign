@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zzc.curriumdesign.dao.UserChangeDao">
+    <select id="getUserEmail" resultType="com.zzc.curriumdesign.vo.User">
+        SELECT * FROM t_user WHERE emailAddress = #{emailAddress}
+    </select>
+
+    <select id="getUserPhone" resultType="com.zzc.curriumdesign.vo.User">
+        SELECT * FROM t_user WHERE userPhone = #{userPhone}
+    </select>
+
+    <update id="updateImage" parameterType="com.zzc.curriumdesign.vo.User">
+        update t_user set imgAddress=#{imgAddress} WHERE userName=#{userName}
+    </update>
+
+    <update id="updateEmailAddress" parameterType="com.zzc.curriumdesign.vo.User">
+        update t_user set emailAddress=#{emailAddress} WHERE userName=#{userName}
+    </update>
+
+    <update id="updatePassword" parameterType="com.zzc.curriumdesign.vo.User">
+        update t_user set password=#{password} WHERE userName=#{userName}
+    </update>
+
+    <update id="updatePhone" parameterType="com.zzc.curriumdesign.vo.User">
+        update t_user set userPhone=#{userPhone} WHERE userName=#{userName}
+    </update>
+</mapper>

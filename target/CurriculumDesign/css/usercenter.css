@@ -1,0 +1,242 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    width: 1000px;
+    height: 100px;
+    margin: 0 auto;
+    border-bottom: 5px solid #FA8072;
+}
+.header_left img{
+    display: block;
+    width: 331px;
+    height: 80px;
+    margin-top: 10px;
+    float: left;
+}
+#user_name{
+    color: #FA8072;
+}
+.header_right{
+    display: block;
+    float: right;
+    width: 600px;
+    height: 90px;
+    margin-top: 5px;
+}
+.user_info{
+    display: block;
+    float: right;
+    width: 400px;
+    height: 46px;
+    text-align: right;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+#exit_btn{
+    text-decoration: none;
+    color: #000000;
+}
+#exit_btn:hover{
+    color: #FA8072;
+}
+.header_right ul{
+    list-style-type: none;
+    display: block;
+    float: right;
+    margin-top: 4px;
+}
+.header_right ul li{
+    display: block;
+    float: left;
+    width: 90px;
+    height: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 5px;
+    border-left: 2px solid #000000;
+}
+
+.header_right ul li:first-child{
+    width: 60px;
+    border-left: none;
+    color: #FA8072;
+}
+.header_right ul li a{
+    color: #000000;
+    text-decoration: none;
+}
+.header_right ul li a:hover{
+    color: #FA8072;
+}
+
+#device_history h2{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#device_history .tip_p {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#contains{
+    display: flex;
+    margin: 0 auto;
+    width: 1000px;
+    height: auto;
+}
+.contains_left {
+    width: 300px;
+    height: auto;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+/*头像*/
+.user_img {
+    display: block;
+    margin: 0 auto;
+}
+.img_submit {
+    display: block;
+    width: 100px;
+    height: 30px;
+    background-color: #55aaff;
+    color: #FFFFFF;
+    border: 0;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 10px auto;
+}
+
+.contains_right {
+    width: 700px;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.contains_left .list_show {
+    width: 300px;
+    border: 1px solid #55aaff;
+    height: 60px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding-top: 20px;
+    font-weight: bolder;
+    background: #FA8072;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+/*弹出层的样式*/
+.black_overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(187,184,184);
+    -moz-opacity: 0.7;
+    opacity: 0.7;
+}
+
+.white_content {
+    display: none;
+    position: absolute;
+    width: 390px;
+    height: 340px;
+    border: 6px  solid #55aaff;
+    background-color: #FFFFFF;
+    overflow: auto;
+    z-index: 1001;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+table.gridtable {
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;
+    width: 680px;
+    margin: 0 auto;
+}
+
+table.gridtable th {
+    border-width: 1px;
+    padding: 8px;
+    font-size: 16px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #dedede;
+}
+
+table.gridtable td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+/* 弹出层的邮箱 */
+.epc {
+    width: 300px;
+    height: 280px;
+    margin: 10px auto;
+    box-sizing: border-box;
+}
+.epc label {
+    display: block;
+    width: 300px;
+    margin: 14px auto;
+}
+.epc_new {
+    width: 260px;
+    border: 0;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid #666666;
+}
+.epc_new_code{
+    width: 130px;
+    border: 0;
+    border: 2px solid #666666;
+    height: 30px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+.btnCode{
+    width: 110px;
+    border: 0;
+    height: 30px;
+    background: #55aaff;
+    color: #FFFFFF;
+    border-radius: 10px;
+    text-align: center;
+}
+.btnSubmit{
+    display: block;
+    width: 200px;
+    height: 30px;
+    background-color: #55aaff;
+    color: #FFFFFF;
+    border: 0;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 8px auto;
+}
+
