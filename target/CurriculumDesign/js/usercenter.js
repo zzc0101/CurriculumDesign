@@ -173,8 +173,22 @@ let vm_MyDiv = new Vue({
         checkPhone() {
             const champter = /^((\(\d{2,3}\))|(\d{3}\-))?1(3|5|8|9)\d{9}$/;
             if(champter.test(this.phone_new)) {
-                vm_MyDiv.isPhone_state = true
-                vm_MyDiv.phone_error = ""
+                $.ajax({
+                    url:"queryUserByPhone.do",
+                    method:"post",
+                    data:{userPhone:vm_MyDiv.phone_new},
+                    dataType:"JSON",
+                    success: function (response) {
+                        console.log(response)
+                        if(!response) {
+                            vm_MyDiv.isPhone_state = true
+                            vm_MyDiv.phone_error = ""
+                        } else {
+                            vm_MyDiv.isPhone_state = false;
+                            vm_MyDiv.phone_error = "电话号码已存在"
+                        }
+                    }
+                })
             } else {
                 vm_MyDiv.isPhone_state = false
                 vm_MyDiv.phone_error = "请输入合法的电话号码"

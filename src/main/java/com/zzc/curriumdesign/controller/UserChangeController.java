@@ -95,10 +95,10 @@ public class UserChangeController {
     * @DateTime: 2020/12/16 22:03
     * @Description: 通过电话号码查询电话是否存在
     */
-    @RequestMapping(value = "/queryUserByPhone.do", method = RequestMethod.GET)
+    @RequestMapping(value = "/queryUserByPhone.do", method = RequestMethod.POST)
     @ResponseBody
-    private boolean getUserPhone(String phone) {
-        return userChangeService.getUserPhone(phone);
+    private boolean getUserPhone(String userPhone) {
+        return userChangeService.getUserPhone(userPhone);
     }
 
     /**
