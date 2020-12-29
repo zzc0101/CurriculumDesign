@@ -1,6 +1,5 @@
 package com.zzc.curriumdesign.controller;
 
-import com.sun.deploy.net.HttpResponse;
 import com.zzc.curriumdesign.service.DeviceService;
 import com.zzc.curriumdesign.service.UserService;
 import com.zzc.curriumdesign.utils.CreateVerificationImage;

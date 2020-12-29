@@ -1,5 +1,8 @@
 package com.zzc.curriumdesign.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zzc.curriumdesign.service.DeviceService;
 import com.zzc.curriumdesign.vo.Device;
 import org.apache.ibatis.annotations.Param;
@@ -31,7 +34,7 @@ public class DeviceController {
     * @DateTime: 2020/12/18 14:41
     * @Description: 通过用户名获取用户登录的设备信息
     */
-    @RequestMapping(value = "queryAllDevice.do",method = RequestMethod.GET)
+    @RequestMapping(value = "/queryAllDevice.do",method = RequestMethod.GET)
     @ResponseBody
     private List<Device> queryAllDevice(@Param("userName") String userName) {
         return deviceService.queryListDevice(userName);

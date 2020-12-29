@@ -3,7 +3,9 @@ package com.zzc.curriumdesign.test;
 import com.zzc.curriumdesign.service.DeviceService;
 import com.zzc.curriumdesign.service.UserChangeService;
 import com.zzc.curriumdesign.service.UserService;
+import com.zzc.curriumdesign.utils.MD5Util;
 import com.zzc.curriumdesign.vo.Device;
+import com.zzc.curriumdesign.vo.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.config.plugins.util.ResolverUtil;
@@ -32,8 +34,37 @@ public class TestMyBatis {
     @Autowired
     private UserChangeService userChangeService;
     @Test
-    public void test1() {
+    public void getUserTest() {
         log.info("查询结果："+userService.getUser("admin").toString());
+    }
+
+    @Test
+    public void loginTest() {
+        log.info(userService.checkLogin("admin", "123456"));
+    }
+
+    @Test
+    public void changUserImage() {
+        User user = userService.getUser("admin");
+        log.info(userChangeService.updateUserImage(user, "/images/userico/7a82c9fa-8c68-4666-a187-2e274246ae7b.png"));
+    }
+
+    @Test
+    public void changUserPassword() {
+        User user = userService.getUser("admin");
+        log.info(userChangeService.updateUserPassword(user,MD5Util.md5("123456")));
+    }
+
+    @Test
+    public void changUserEmail() {
+        User user = userService.getUser("admin");
+        log.info(userChangeService.updateUserEmail(user,"318185326@qq.com"));
+    }
+
+    @Test
+    public void changUserPhone() {
+        User user = userService.getUser("admin");
+        log.info(userChangeService.updateUserPhone(user,"13545672130"));
     }
 
     @Test
